@@ -7,10 +7,8 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
   buf = fs.readFileSync(filename);
-  console.log(buf.toString('utf8',0,buf.length));
   response.send(buf.toString('utf8',0,buf.length));
 
-  //response.send('Hello World! 2 ');
 });
 
 var port = process.env.PORT || 5000;
